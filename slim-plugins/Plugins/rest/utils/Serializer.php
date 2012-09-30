@@ -15,7 +15,7 @@
             );
 
             // add common content-types - set them to use the default content-type
-            $defaultContentType = Configuration::get("DEFAULT_CONTENT_TYPE");
+            $defaultContentType = Configuration::get("content-type");
             $defaultSerializer = self::$contentTypes[$defaultContentType];
 
             if(isset($defaultSerializer))
@@ -35,7 +35,7 @@
             if(!is_array($data) && empty($data))
                 return $data;
 
-            $defaultContentType = Configuration::get("DEFAULT_CONTENT_TYPE");
+            $defaultContentType = Configuration::get("content-type");
             $serializer = self::$contentTypes[$contentType];
             if(!isset($serializer))
                 $serializer = self::$contentTypes[$defaultContentType];

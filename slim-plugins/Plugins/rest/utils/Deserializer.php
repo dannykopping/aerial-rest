@@ -20,22 +20,24 @@
         }
 
 
-        /**
-         * Parse input
-         *
-         * This method will attempt to parse the request body
-         * based on its content type if available.
-         *
-         * @param   string $data
-         * @param   string $contentType
-         * @return  mixed
-         */
+		/**
+		 * Parse input
+		 *
+		 * This method will attempt to parse the request body
+		 * based on its content type if available.
+		 *
+		 * @param   string $data
+		 * @param   string $contentType
+		 *
+		 * @throws Exception
+		 * @return  mixed
+		 */
         protected function parse($data, $contentType)
         {
             if(empty($data))
                 return $data;
 
-            $defaultContentType = Configuration::get("DEFAULT_CONTENT_TYPE");
+            $defaultContentType = Configuration::get("content-type");
             $deserializer = $this->contentTypes[$contentType];
             if(!isset($deserializer))
                 $deserializer = $this->contentTypes[$defaultContentType];
