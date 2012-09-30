@@ -61,5 +61,6 @@
         public static function load()
         {
             require_once self::get("plugins")."/rest/models/Request.php";
+            require_once self::get("plugins")."/rest/models/Response.php";
         }
     }

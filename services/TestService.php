@@ -8,7 +8,7 @@
          * @url         /test/:includeSiblings
          * @methods     GET,POST
          */
-        public function sayHello(Request $req)
+        public function sayHello(Request $req, Response $response)
         {
             $rex = new stdClass();
             $rex->name = "rex";
@@ -28,6 +28,9 @@
 
             if($req && isset($req->params["includeSiblings"]) && $req->params["includeSiblings"] == "true")
                 $rex->siblings = array($robyn);
+
+			$response->status = Status::OK;
+			$response->headers['X-Powered-By'] = "Aerial REST";
 
             return $rex;
         }
