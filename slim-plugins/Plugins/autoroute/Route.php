@@ -6,7 +6,7 @@
      * @property array      arguments
      * @property array      methods
      * @property array      callback
-     * @property array      authorizedUsers
+     * @property array      auth
      */
     class Route
     {
@@ -34,7 +34,7 @@
             switch ($name)
             {
                 case "methods":
-                case "authorizedUsers":
+                case "auth":
                     if (empty($value))
                         break;
 
