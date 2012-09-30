@@ -37,9 +37,20 @@
     /**
      * The path to services
      */
-    Configuration::set("services", dirname(__FILE__)."/../services");
+    Configuration::set("services", dirname(__FILE__)."/../../src_php/service");
 
-    Configuration::load();
+
+	/**
+	 * Database connection
+	 */
+	Configuration::set("DB_ENGINE", "mysql");
+	Configuration::set("DB_USERNAME", "root");
+	Configuration::set("DB_PASSWORD", "mac150189");
+	Configuration::set("DB_HOST", "localhost");
+	Configuration::set("DB_PORT", "3306");
+	Configuration::set("DB_SCHEMA", "triptrackr");
+
+	Configuration::load();
 
     class Configuration
     {
